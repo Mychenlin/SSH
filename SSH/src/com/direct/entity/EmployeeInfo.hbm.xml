@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC 
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+	<class name="com.direct.entity.EmployeeInfo" table="employeeinfo">
+		<id name="empid" column="empid">
+			<generator class="identity" />
+		</id>
+		<property name="empName" column="empName" />
+		<property name="empSex" column="empSex" />
+		<property name="empIdcard" column="empIdcard" />
+		<property name="subsidies" column="subsidies" />
+		<property name="empDate" column="empDate" />
+		<property name="remark" column="remark" />
+		<property name="userName" column="userName" />
+		<property name="userPwd" column="userPwd" />
+		<many-to-one name="dinfo" class="com.direct.entity.DepartmentInfo" fetch="select" lazy="false">
+			<column name="deptid"></column>
+		</many-to-one>
+	</class>
+</hibernate-mapping>
